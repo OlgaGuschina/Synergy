@@ -18,20 +18,16 @@ for i in range(1, N+1):
 print("Число", N, "имеет", cnt, "делителей.")
 
 #Задание3
-print("Введите число A")
-A = int(input())
-print("Введите число B>=A")
-B = int(input())
+print("Введите числа A и В через пробел (В >= А):")
+A, B = map(int, input().split())
 for i in range(A, B+1):
     if i % 2 == 0:
         print(i, end = " ")
         
 #Задание3 способ 2
 print()
-print("Введите число A")
-A = int(input())
-print("Введите число B>=A")
-B = int(input())
+print("Введите числа A и В через пробел (В >= А):")
+A, B = map(int, input().split())
 s = ""
 for i in range(A, B+1):
     if i % 2 == 0:
