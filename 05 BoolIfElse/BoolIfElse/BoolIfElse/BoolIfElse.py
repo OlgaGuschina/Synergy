@@ -4,7 +4,9 @@
 # "положительное четное число". Если число не является четным - выведите сообщение "число не является четным" 
 
 #Последнее предложение задачи кажется лишним, но сделала как задано
-N = int(input())
+print()
+print("Задача 1. Чётность и знак.")
+N = int(input("Введите целое число: "))
 if N == 0:
     print("Нулевое число")
 else:
@@ -23,13 +25,19 @@ else:
         print(add_str)
         
 #Задача 2
+#Дано слово из маленьких латинских букв. Сколько там согласных и гласных букв? Гласными называют буквы «a», «e», «i», «o», «u».
+#Для решения задачи создайте переменную и в неё положите слово с помощью input()
+#А также определите количество каждой из этих гласных букв 
+#Если какой-то из перечисленных букв нет -Выведите False
+ 
+print()
+print("Задача 2. Подсчет букв.")
 def print_letter(name, count):
     if count > 0:
         print(name+":", count, "шт.")
     else:
         print(name+":", str(False))
-        
-print()
+       
 print("Введите слово маленькими латинскими буквами:")
 word = input()
 Na = No = Ni = Ne = Nu = N = 0
@@ -48,6 +56,25 @@ for char in word:
         N += 1
 print("Согласных", N, "букв.")
 print("Гласных", Na+No+Ne+Ni+Nu, "букв.")
+print("Из них")
+print_letter("a", Na)
+print_letter("o", No)
+print_letter("i", Ni)
+print_letter("e", Ne)
+print_letter("u", Nu)
+
+print()
+print("Задача 2. Способ 2. Подсчет букв.")
+print("Введите слово маленькими латинскими буквами:")
+word = input()
+Na = word.count("a")
+No = word.count("o")
+Ne = word.count("e")
+Nu = word.count("u")
+Ni = word.count("i")
+N = Na+No+Ne+Ni+Nu
+print("Согласных", len(word) - N, "букв.")
+print("Гласных", N, "букв.")
 print("Из них")
 print_letter("a", Na)
 print_letter("o", No)
