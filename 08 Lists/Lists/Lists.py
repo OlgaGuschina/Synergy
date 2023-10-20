@@ -41,7 +41,6 @@ for i in range(n):
 a.sort()
 counter = 0
 while len(a)>1:
-    print(a)
     counter += 1
     if a[-1] + a[0] <= m:
         print("Лодка {}:".format(counter), a.pop(), a[0])
@@ -51,3 +50,24 @@ while len(a)>1:
 if len(a) == 1:
     counter += 1
     print("Лодка {}:".format(counter), a.pop())
+    
+
+#Способ 2. Опять выдал студент, лучше моего
+print("Задача 3. Переправа - способ 2.")
+m = int(input("Введите максимальную массу для одной лодки: "))
+n = int(input("Введите количество рыбаков: "))
+weights = sorted([int(input(f"Введите вес рыбака {i}: ")) for i in range(n)])
+first = 0
+last = len(weights) - 1
+counter = 1
+while first <= last:
+    if weights[last] + weights[first] <= m:
+        if first == last:
+            print(f"Лодка {counter}: {weights[last]}")
+        else:
+            print(f"Лодка {counter}: {weights[last]} + {weights[first]}")
+        first += 1
+    else:
+        print(f"Лодка {counter}: {weights[last]}")
+    last -= 1
+    counter += 1
